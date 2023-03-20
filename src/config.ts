@@ -118,6 +118,12 @@ export const AuthorDetail = [
     description: 'Hello World',
     contact: 'chris@christham.net',
     image: '../images/authors/Chris Tham.jpg'
+  },
+  {
+    name: 'Marco',
+    description: 'Bassista / Forse Marco',
+    contact: 'marco@gmail.com',
+    image: '../images/authors/marco.webp'
   }
 ]
 
