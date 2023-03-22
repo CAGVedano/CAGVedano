@@ -128,7 +128,7 @@ const tags = Array.from(tagmap.values())
       socialImage={frontmatter.socialImage}
     />
   </header>
-  <main class="mt-10 dark:bg-gray-900">
+  <main class="mt-10 dark:bg-gray-900 max-w-screen-xl mx-auto">
     <div
       class="mx-4 mt-6 mb-24 grid grid-cols-2 gap-y-4 sm:grid-cols-3 md:grid-cols-4 gap-x-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6"
     >
@@ -151,7 +151,7 @@ const tags = Array.from(tagmap.values())
                 <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out" />
                 <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
                   <h3 class="text-center text-white text-2xl font-bold">
-                    <span class="absolute inset-0" />
+                    <span class="absolute inset-0"></span>
                     {tag.tag}
                   </h3>
                   <p class="text-center text-gray-200 text-sm font-medium">

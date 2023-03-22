@@ -3,14 +3,14 @@ import Img from '../components/img.astro'
 
 const callouts = [
   {
-    name: 'Astro',
-    description: 'Build faster websites with less client-side Javascript',
-    imageSrc: '../images/svg/astro/full-logo-light.svg',
-    imageAlt: 'Astro logo',
-    href: 'https://astro.build',
+    activity: 'TerzoSabato',
+    description: `SABATO 18 MARZO: in arrivo una band tutta al femminile! Graditissime ospiti al TerzoSabato le GINGER BENDER!`,
+    imageSrc: '../images/terzosabato.png',
+    imageAlt: 'TerzoSabato',
+    href: '/terzo-sabato',
   },
   {
-    name: 'TailwindCSS',
+    activity: 'Tandem 2.0',
     description:
       'A utility-first CSS framework that can be composed to build any design, directly in your markup',
     imageSrc: '../images/svg/undraw/undraw_tailwind_css.svg',
@@ -18,7 +18,14 @@ const callouts = [
     href: 'https://tailwindcss.com',
   },
   {
-    name: 'HTML/CSS/Javascript',
+    activity: 'Progetto STRANGE',
+    description: 'The core building blocks of the web',
+    imageSrc: '../images/svg/undraw/undraw_static_assets.svg',
+    imageAlt: 'Core Web',
+    href: 'https://w3.org',
+  },
+  {
+    activity: 'Progetto SCHEGGE',
     description: 'The core building blocks of the web',
     imageSrc: '../images/svg/undraw/undraw_static_assets.svg',
     imageAlt: 'Core Web',
@@ -27,34 +34,32 @@ const callouts = [
 ]
 ---
 
-<div class="bg-purple-100 dark:bg-purple-900">
+<div class="bg-primary-100 dark:bg-primary-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none">
-      <h2 class="text-4xl font-extrabold text-purple-800 dark:text-purple-100">
-        Find Out More
+      <h2 class="text-4xl font-extrabold text-primary-900 dark:text-primary-100">
+        In Evidenza
       </h2>
       <div
-        class="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6"
+        class="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:gap-y-12"
       >
         {
           callouts.map(callout => (
             <div class="group relative">
-              <div class="relative w-full h-80 bg-white dark:bg-purple-600 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+              <div class="relative w-full h-80 bg-white dark:bg-primary-500 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                 <Img
                   src={callout.imageSrc}
                   alt={callout.imageAlt}
                   class="w-full h-full object-center object-contain"
                 />
               </div>
-              <h3 class="mt-6 text-2xl text-purple-500 dark:text-purple-300">
+              <p class="text-base mt-3 text-gray-900 dark:text-gray-100">{callout.description}</p>
+              <div class="text-primary-500 dark:text-primary-300">
                 <a href={callout.href}>
-                  <span class="absolute inset-0" />
-                  {callout.name}
+                  <span class="absolute inset-0" ></span>
+                  {callout.activity}
                 </a>
-              </h3>
-              <p class="text-base text-gray-900 dark:text-gray-100">
-                {callout.description}
-              </p>
+              </div>       
             </div>
           ))
         }

@@ -1,0 +1,47 @@
+---
+import type { Frontmatter } from '../config'
+import { SiteMetadata } from '../config'
+import Page from '../layouts/page.astro'
+import Img from '../components/img.astro'
+
+const frontmatter: Frontmatter = {
+  title: 'Sostienici',
+  description: "Il tuo impegno, tangibile, con noi accanto a chi fa più fatica",
+  coverSVG: '../images/svg/undraw/undraw_about_me.svg',
+  socialImage: '../images/5x1000.png',
+  publishDate: SiteMetadata.buildTime,
+}
+---
+
+<Page frontmatter={frontmatter}>
+  <div class="">
+    <Img class="w-full" src={frontmatter.socialImage}/>  
+
+    <p>
+        Anche grazie TE siamo in grado di far nascere, crescere e portare avanti progetti e servizi, di inventarne di nuovi a beneficio dell’intera comunità. Pensare, progettare, costruire, reinventare, modellare i nostri interventi, sempre in ascolto di desideri e bisogni delle persone che incontriamo ogni giorno. 
+
+    </p>
+    <p class="font-bold">
+        Destinando il 5x1000 a L'Aquilone, sarai con noi accanto a chi ha più bisogno.
+    </p>
+    <p>
+        Sosterrai non solo i nostri Servizi e Progetti, ma anche i sogni, le idee e l'inarrestabile immaginazione che ogni giorno mettiamo in campo per garantire un presente ed un futuro dignitosi alle <strong>persone</strong>.
+        Il 5x1000 è una quota delle imposte che è possibile destinare alle Associazioni e Cooperative Onlus.
+    </p>
+    <p>
+        <strong>A te non costa nulla</strong>, per noi e per tutti coloro che beneficiano del nostro lavoro e della nostra presenza sul territorio fa la differenza: bambine e bambini, giovani, famiglie, persone che stanno vivendo momenti di particolare fragilità.
+    </p>
+    <p>
+        Scegli L'Aquilone! Al momento della scelta sulla destinazione del <strong>5x1000</strong> indica la nostra P.IVA:<strong>02150100127</strong>.
+    </p>
+    <div>
+        <p class="font-bold">Ecco come puoi fare:</p>
+        <ul>
+            <li>compila il modulo 730, il CUD oppure il Modello Unico;</li>
+            <li>firma nel riquadro "Sostegno delle organizzazioni non lucrative di utilità sociale, delle associazioni di promozione sociale..."</li>            
+            <li>indica la nostra P.IVA:02150100127</li>
+        </ul>
+    </div>
+    <p class="font-bold text-2xl text-right text-accent">Grazie di cuore a chi ha creduto e crederà in noi!</p>
+  </div>
+</Page>

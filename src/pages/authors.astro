@@ -38,7 +38,7 @@ const authors = Array.from(new Set(latestPosts.flatMap(post => post.data.author)
               <div class="relative w-full h-full mb-4 rounded-full overflow-hidden group-hover:opacity-75 aspect-w-1 aspect-h-1">
                 <Img src={authorDetail(author).image} alt={authorDetail(author).description} class="w-full h-full object-center object-cover" />
               </div>
-              <h3 class="inline-block py-1 px-3 rounded bg-purple-600 hover:bg-pink-600 text-white text-xs font-medium tracking-tight uppercase">
+              <h3 class="inline-block py-1 px-3 rounded bg-primary-500 hover:bg-secondary-500 text-white text-xs font-medium tracking-tight uppercase">
                 <a href={`${import.meta.env.BASE_URL}author/${author}/`}>
                   <span class="absolute inset-0"></span>
                   {author}

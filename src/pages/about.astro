@@ -1,0 +1,61 @@
+---
+import type { Frontmatter } from '../config'
+import { SiteMetadata } from '../config'
+import Page from '../layouts/page.astro'
+import PageHero from '../components/pagehero.astro'
+import Img from '../components/img.astro'
+
+const frontmatter: Frontmatter = {
+  title: 'Su di noi',
+  description: "L'Aquilone: Interventi educativi e sociali",
+  coverSVG: '../images/svg/undraw/undraw_about_me.svg',
+  socialImage: '../images/undraw/undraw_about_me.png',
+  publishDate: SiteMetadata.buildTime,
+}
+---
+
+<Page frontmatter={frontmatter}>
+  <div class="">
+    <p>
+      Siamo un gruppo di persone con sensibilità sociale, competenze teoriche e pratiche, spirito imprenditoriale.
+    </p>
+    <p>
+      Offriamo alla comunità interventi di promozione, prevenzione, affiancamento, sostegno, presa in carico, tutela verso altre persone che nella vita ricercano la strada verso una maggiore autonomia. 
+
+    </p>
+    <p>
+      Lavoriamo cercando di cogliere la complessità delle relazioni che si intrecciano fra singoli, gruppi e istituzioni, entrando a nostra volta in relazione.
+    </p>
+    <p>
+      Una relazione educativa tra persone che apprendono e crescono fra azioni ed emozioni; una relazione che è anche relazione sociale, in quanto prospettiva di un modo di stare nella società orientando risorse per vivere meglio.
+    </p>
+  </div>
+
+  <video class="aspect-ratio" controls muted autoplay src="/videos/presentazione.mp4"/>
+
+  <div class="bg-gray-50 dark:bg-black not-prose">
+    <div
+      class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
+    >
+      <h2
+        class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl"
+      >
+        <span class="block dark:text-white">Vuoi saperne di piú?</span>
+        <span class="block text-primary-500 dark:text-primary-300"
+          >visita la sezione Risorse
+        </span>
+      </h2>
+      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+        <div class="inline-flex rounded-md shadow">
+          <a
+            href="doc/chi-siamo"
+            class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-secondary-500"
+          >
+            Alle risorse
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</Page>

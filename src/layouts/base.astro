@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -37,8 +37,8 @@ const { frontmatter } = Astro.props
     </script>
     <style is:inline>
       [x-cloak] { display: none !important; }
-      </style>
-{frontmatter.extra?.includes('math') &&
+    </style>
+    {frontmatter.extra?.includes('math') &&
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.1/dist/katex.min.css" integrity="sha384-pe7s+HmY6KvqRkrRRUr4alQJ0SkmzCft3RpK1ttGMa7qk8Abp/MEa/4wgceRHloO" crossorigin="anonymous">
     }
     {frontmatter.extra?.includes('markmap') &&
@@ -50,21 +50,23 @@ const { frontmatter } = Astro.props
         </style>
       }
     <slot name="in-head" />
-    </head>
-    <body class="dark:bg-gray-900">
-      {frontmatter.extra?.includes('mermaid') &&
-        <script type="module">
-          import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs'
-          mermaid.initialize({startOnLoad:true});
-        </script>
-      }
-      <Header />
-      <slot />
-      {frontmatter.gallery && <Gallery folder={frontmatter.gallery} />}
-      <slot name="before-footer" />
-      <Footer />
-      {frontmatter.extra?.includes('markmap') &&
-        <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
-      }
+  </head>
+  <body class="dark:bg-gray-900">
+    {frontmatter.extra?.includes('mermaid') &&
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs'
+        mermaid.initialize({startOnLoad:true});
+      </script>
+    }
+    <Header />
+    <slot/>
+    <div class="max-w-screen-lg mx-auto">
+      {frontmatter.gallery && <Gallery folder={frontmatter.gallery} />}  
+    </div>
+    <slot name="before-footer" />
+    <Footer />
+    {frontmatter.extra?.includes('markmap') &&
+      <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+    }
   </body>
 </html>

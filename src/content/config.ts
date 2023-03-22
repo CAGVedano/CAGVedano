@@ -25,7 +25,7 @@ const docCollection = defineCollection({
     schema: z.object({
       draft: z.boolean().optional(),
       section: z.string(),
-      weight: z.number().default(0),
+      order: z.number().default(0),
       title: z.string(),
       description: z.string(),
       images: z.array(z.string()).optional(),

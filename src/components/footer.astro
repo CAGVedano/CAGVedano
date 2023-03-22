@@ -6,56 +6,54 @@ import Img from '../components/img.astro'
 
 <div class="h-24 lg:h-16"></div>
 <footer class="text-gray-600 dark:text-gray-400">
-  <div class="fixed z-20 bottom-0 inset-x-0 bg-gray-100 dark:bg-gray-800 px-4 lg:px-8 py-1 lg:py-4 w-full flex items-center lg:flex-row flex-col border-t-2 border-purple-300 dark:border-purple-600 " >
+  <div class="fixed z-20 bottom-0 inset-x-0 bg-gray-100 dark:bg-gray-800 px-4 lg:px-8 py-1 lg:py-4 w-full flex items-center lg:flex-row flex-col border-t-2 border-primary-300 dark:border-primary-500 " >
     <span class="flex-none flex flex-row items-center">
       <a class="flex title-font font-medium items-center lg:justify-start justify-center text-gray-900 dark:text:gray-100" href={import.meta.env.BASE_URL} >
-        <Img src={Logo} alt="Footer Logo" class="dark:bg-gray-100 h-6 w-6" />
+        <Img src={Logo} alt="Footer Logo" class="dark:bg-transparent h-6 w-6" />
         <span class="sr-only">Logo</span>
       </a>
-      <p class="text-sm text-gray-600 dark:text-gray-300 ml-2 pl-2 border-l-2 border-purple-300 dark:border-purple-600 py-1" >
+      <p class="text-sm text-gray-600 dark:text-gray-300 ml-2 pl-2 border-l-2 border-primary-300 dark:border-primary-500 py-1" >
         © {new Date().getFullYear()} MIT licence
         <a
-          href="https://hellotham.com"
-          class="ml-1 text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+          href="https://talale.it"
+          class="ml-1 text-primary-500 hover:text-secondary-500 dark:text-primary-300 dark:hover:text-secondary-300"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Hello Tham Pty Ltd
+          talale
         </a>
       </p>
     </span>
     <span class="flex-none flex flex-row items-center">
-      <p class="text-sm text-gray-600 dark:text-gray-300 lg:ml-4 lg:pl-4 lg:border-l-2 lg:border-purple-300 dark:lg:border-purple-600 lg:py-1"
+      <p class="text-sm text-gray-600 dark:text-gray-300 lg:ml-4 lg:pl-4 lg:border-l-2 lg:border-primary-300 dark:lg:border-primary-500 lg:py-1"
       >
         <a
           href={import.meta.env.BASE_URL + 'privacy'}
-          class="ml-1 text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+          class="ml-1 text-primary-500 hover:text-secondary-500 dark:text-primary-300 dark:hover:text-secondary-300"
         >
           Privacy Policy
         </a>
       </p>
       <p
-        class="text-sm text-gray-600 ml-4 pl-4 border-l-2 border-purple-300 py-1"
+        class="text-sm text-gray-600 ml-4 pl-4 border-l-2 border-primary-300 py-1"
       >
         <a
-          href={import.meta.env.BASE_URL + 'rss.xml'}
-          class="ml-1 text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+          href="/contact"
+          class="ml-1 text-primary-500 hover:text-secondary-500 dark:text-primary-300 dark:hover:text-secondary-300"
           rel="noopener noreferrer"
-          target="_blank"
         >
-          RSS
+          Contatti
         </a>
       </p>
       <p
-        class="text-sm text-gray-600 dark:text-gray-300 ml-4 pl-4 border-l-2 border-purple-300 py-1"
+        class="text-sm text-gray-600 ml-4 pl-4 border-l-2 border-primary-300 py-1"
       >
         <a
-          href={import.meta.env.BASE_URL + 'sitemap-index.xml'}
-          class="ml-1 text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+          href="/support_us"
+          class="ml-1 text-primary-500 hover:text-secondary-500 dark:text-primary-300 dark:hover:text-secondary-300"
           rel="noopener noreferrer"
-          target="_blank"
         >
-          Sitemap
+          Sostienici
         </a>
       </p>
     </span>
@@ -67,7 +65,7 @@ import Img from '../components/img.astro'
           s.link ? (
             <a
               href={s.link}
-              class="ml-3 text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+              class="ml-3 text-primary-500 hover:text-secondary-500 dark:text-primary-300 dark:hover:text-secondary-300"
               rel="noopener noreferrer"
               target="_blank"
             >

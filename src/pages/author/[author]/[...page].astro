@@ -64,6 +64,6 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
   </PageHero>
   </header>
   <main class="mt-10 bg-gray-100 dark:bg-gray-900">
-    <BlogRoll posts={page.data} />
+    <BlogRoll posts={page.data} base={currentPage} page={page} />
   </main>
 </Base>
