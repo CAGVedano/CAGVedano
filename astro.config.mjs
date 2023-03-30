@@ -11,6 +11,7 @@ import rehypeKatex from 'rehype-katex'
 import remarkPlantUML from '@akebifiky/remark-simple-plantuml'
 import { remarkReadingTime } from './remark-plugins/remark-reading-time.mjs';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
+import NetlifyCMS from 'astro-netlify-cms';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,9 +21,67 @@ export default defineConfig({
       noExternal: ['swiper', 'leaflet'],
     },
   },
-  site: 'http://localhost:3000',
+  site: 'https://laquilone-demo.netlify.app',
   base: '/',
-  integrations: [tailwind(), sitemap(), image(), mdx(), alpinejs(), robotsTxt()],
+  integrations: [
+    tailwind(), 
+    sitemap(), 
+    image(), 
+    mdx(), 
+    alpinejs(), 
+    robotsTxt(),
+    NetlifyCMS({
+      adminPath: '/admin',
+      config: {
+        locale: 'it',
+        backend: {
+          name: 'git-gateway',
+          branch: 'main',
+        },
+        collections: [
+          {
+            name: 'posts',
+            label: 'Blog Posts',
+            folder: 'src/content/blog',
+            create: true,
+            delete: true,
+            fields: [
+              { name: 'title', widget: 'string', label: 'Post Title' },
+              { name: 'body', widget: 'markdown', label: 'Post Body' },
+            ],
+          },
+          {
+            name: 'docs',
+            label: 'Doc pages',
+            folder: 'src/content/doc',
+            create: true,
+            delete: true,
+            fields: [
+              { name: 'title', widget: 'string', label: 'Post Title' },
+              { name: 'body', widget: 'markdown', label: 'Post Body' },
+            ],
+          },
+          {
+            name: 'settings',
+            label: 'Settings',
+            editor: {
+              preview: false
+            },
+            files: [
+              {
+                file: 'src/configs.ts',
+                label: 'config',
+                name: 'config',
+                fields: [
+                  { name: 'body', label: 'Body', widget: 'code' }
+                ]
+              }
+            ]
+          }
+        ],
+      },
+    }),
+  ],
   experimental: {
     integrations: true,
   },
